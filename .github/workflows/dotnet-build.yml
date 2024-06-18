@@ -1,0 +1,60 @@
+name: Dotnet Build Workflow
+
+on:
+  # considera push em todas as branches
+  push:
+    branches:
+      - '**'
+
+  # seta execução a cada 15 minutos  
+  schedule:
+    - cron: '*/15 * * * *'
+
+jobs:
+  build-on-push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '7.x'
+
+    # restaura dependências e builda projeto
+    - name: Restore dependencies and build project
+      working-directory: github4women/
+      run: |
+        dotnet restore
+        dotnet build --configuration Release --no-restore
+
+    - name: Run tests
+      working-directory: github4women/
+      run: |
+        dotnet test --no-build --verbosity normal
+
+  scheduled-task:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '7.x'
+
+    # notifica dependências desatualizadas
+    - name: Check for outdated dependencies
+      working-directory: github4women/
+      run: |
+        echo "Verificando dependências desatualizadas:"
+        outdated=$(dotnet list package --outdated | tail -n +3)
+        if [ -n "$outdated" ]; then
+          echo "::warning::Existem dependências desatualizadas."
+        else
+          echo "Todas as dependências estão atualizadas."
+        fi
