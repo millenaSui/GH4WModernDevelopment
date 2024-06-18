@@ -1,0 +1,147 @@
+﻿2024-06-18T00:15:15.3920404Z Current runner version: '2.317.0'
+2024-06-18T00:15:15.3947673Z ##[group]Operating System
+2024-06-18T00:15:15.3948431Z Ubuntu
+2024-06-18T00:15:15.3948735Z 22.04.4
+2024-06-18T00:15:15.3949072Z LTS
+2024-06-18T00:15:15.3949480Z ##[endgroup]
+2024-06-18T00:15:15.3949824Z ##[group]Runner Image
+2024-06-18T00:15:15.3950269Z Image: ubuntu-22.04
+2024-06-18T00:15:15.3950740Z Version: 20240609.1.0
+2024-06-18T00:15:15.3951699Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20240609.1/images/ubuntu/Ubuntu2204-Readme.md
+2024-06-18T00:15:15.3953114Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20240609.1
+2024-06-18T00:15:15.3954029Z ##[endgroup]
+2024-06-18T00:15:15.3954404Z ##[group]Runner Image Provisioner
+2024-06-18T00:15:15.3954897Z 2.0.370.1
+2024-06-18T00:15:15.3955386Z ##[endgroup]
+2024-06-18T00:15:15.3956343Z ##[group]GITHUB_TOKEN Permissions
+2024-06-18T00:15:15.3957966Z Contents: read
+2024-06-18T00:15:15.3958374Z Metadata: read
+2024-06-18T00:15:15.3958929Z Packages: read
+2024-06-18T00:15:15.3959471Z ##[endgroup]
+2024-06-18T00:15:15.3962606Z Secret source: Actions
+2024-06-18T00:15:15.3963299Z Prepare workflow directory
+2024-06-18T00:15:15.4579097Z Prepare all required actions
+2024-06-18T00:15:15.4735080Z Getting action download info
+2024-06-18T00:15:15.6676019Z Download action repository 'actions/checkout@v4' (SHA:692973e3d937129bcbf40652eb9f2f61becf3332)
+2024-06-18T00:15:16.2240465Z Download action repository 'actions/setup-dotnet@v4' (SHA:4d6c8fcf3c8f7a60068d26b594648e99df24cee3)
+2024-06-18T00:15:16.8655519Z Complete job name: build-on-push
+2024-06-18T00:15:16.9557227Z ##[group]Run actions/checkout@v4
+2024-06-18T00:15:16.9557870Z with:
+2024-06-18T00:15:16.9558245Z   repository: millenaSui/GH4WModernDevelopment
+2024-06-18T00:15:16.9558914Z   token: ***
+2024-06-18T00:15:16.9559361Z   ssh-strict: true
+2024-06-18T00:15:16.9559675Z   ssh-user: git
+2024-06-18T00:15:16.9560045Z   persist-credentials: true
+2024-06-18T00:15:16.9560491Z   clean: true
+2024-06-18T00:15:16.9560824Z   sparse-checkout-cone-mode: true
+2024-06-18T00:15:16.9561250Z   fetch-depth: 1
+2024-06-18T00:15:16.9561654Z   fetch-tags: false
+2024-06-18T00:15:16.9561971Z   show-progress: true
+2024-06-18T00:15:16.9562357Z   lfs: false
+2024-06-18T00:15:16.9562743Z   submodules: false
+2024-06-18T00:15:16.9563064Z   set-safe-directory: true
+2024-06-18T00:15:16.9563456Z ##[endgroup]
+2024-06-18T00:15:17.2225062Z Syncing repository: millenaSui/GH4WModernDevelopment
+2024-06-18T00:15:17.2227008Z ##[group]Getting Git version info
+2024-06-18T00:15:17.2228008Z Working directory is '/home/runner/work/GH4WModernDevelopment/GH4WModernDevelopment'
+2024-06-18T00:15:17.2229070Z [command]/usr/bin/git version
+2024-06-18T00:15:17.2268037Z git version 2.45.2
+2024-06-18T00:15:17.2293715Z ##[endgroup]
+2024-06-18T00:15:17.2313300Z Temporarily overriding HOME='/home/runner/work/_temp/72c928e8-d3f1-456e-86c8-ea6482cc23f3' before making global git config changes
+2024-06-18T00:15:17.2315132Z Adding repository directory to the temporary git global config as a safe directory
+2024-06-18T00:15:17.2319207Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/GH4WModernDevelopment/GH4WModernDevelopment
+2024-06-18T00:15:17.2356831Z Deleting the contents of '/home/runner/work/GH4WModernDevelopment/GH4WModernDevelopment'
+2024-06-18T00:15:17.2360193Z ##[group]Initializing the repository
+2024-06-18T00:15:17.2364688Z [command]/usr/bin/git init /home/runner/work/GH4WModernDevelopment/GH4WModernDevelopment
+2024-06-18T00:15:17.2457654Z hint: Using 'master' as the name for the initial branch. This default branch name
+2024-06-18T00:15:17.2458812Z hint: is subject to change. To configure the initial branch name to use in all
+2024-06-18T00:15:17.2459606Z hint: of your new repositories, which will suppress this warning, call:
+2024-06-18T00:15:17.2460151Z hint:
+2024-06-18T00:15:17.2460969Z hint: 	git config --global init.defaultBranch <name>
+2024-06-18T00:15:17.2461804Z hint:
+2024-06-18T00:15:17.2462376Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2024-06-18T00:15:17.2464654Z hint: 'development'. The just-created branch can be renamed via this command:
+2024-06-18T00:15:17.2465756Z hint:
+2024-06-18T00:15:17.2466395Z hint: 	git branch -m <name>
+2024-06-18T00:15:17.2467874Z Initialized empty Git repository in /home/runner/work/GH4WModernDevelopment/GH4WModernDevelopment/.git/
+2024-06-18T00:15:17.2476150Z [command]/usr/bin/git remote add origin https://github.com/millenaSui/GH4WModernDevelopment
+2024-06-18T00:15:17.2512011Z ##[endgroup]
+2024-06-18T00:15:17.2513246Z ##[group]Disabling automatic garbage collection
+2024-06-18T00:15:17.2516614Z [command]/usr/bin/git config --local gc.auto 0
+2024-06-18T00:15:17.2548248Z ##[endgroup]
+2024-06-18T00:15:17.2549441Z ##[group]Setting up auth
+2024-06-18T00:15:17.2556170Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2024-06-18T00:15:17.2588199Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2024-06-18T00:15:17.2960395Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2024-06-18T00:15:17.2992370Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2024-06-18T00:15:17.3232804Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2024-06-18T00:15:17.3272383Z ##[endgroup]
+2024-06-18T00:15:17.3289093Z ##[group]Fetching the repository
+2024-06-18T00:15:17.3290639Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +43d44fc7de666dfbefb964c4fd877d41810a5dc6:refs/remotes/origin/main
+2024-06-18T00:15:17.8341170Z From https://github.com/millenaSui/GH4WModernDevelopment
+2024-06-18T00:15:17.8343456Z  * [new ref]         43d44fc7de666dfbefb964c4fd877d41810a5dc6 -> origin/main
+2024-06-18T00:15:17.8363257Z ##[endgroup]
+2024-06-18T00:15:17.8364270Z ##[group]Determining the checkout info
+2024-06-18T00:15:17.8366216Z ##[endgroup]
+2024-06-18T00:15:17.8371857Z [command]/usr/bin/git sparse-checkout disable
+2024-06-18T00:15:17.8414880Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2024-06-18T00:15:17.8443978Z ##[group]Checking out the ref
+2024-06-18T00:15:17.8446917Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2024-06-18T00:15:17.8850510Z Switched to a new branch 'main'
+2024-06-18T00:15:17.8853392Z branch 'main' set up to track 'origin/main'.
+2024-06-18T00:15:17.8862928Z ##[endgroup]
+2024-06-18T00:15:17.8901101Z [command]/usr/bin/git log -1 --format='%H'
+2024-06-18T00:15:17.8925903Z '43d44fc7de666dfbefb964c4fd877d41810a5dc6'
+2024-06-18T00:15:17.9230288Z ##[group]Run actions/setup-dotnet@v4
+2024-06-18T00:15:17.9230821Z with:
+2024-06-18T00:15:17.9231161Z   dotnet-version: 7.x
+2024-06-18T00:15:17.9231538Z   cache: false
+2024-06-18T00:15:17.9231904Z ##[endgroup]
+2024-06-18T00:15:18.1444313Z [command]/home/runner/work/_actions/actions/setup-dotnet/v4/externals/install-dotnet.sh --skip-non-versioned-files --runtime dotnet --channel LTS
+2024-06-18T00:15:18.3668173Z dotnet-install: .NET Core Runtime with version '8.0.6' is already installed.
+2024-06-18T00:15:18.3689258Z [command]/home/runner/work/_actions/actions/setup-dotnet/v4/externals/install-dotnet.sh --skip-non-versioned-files --channel 7.0
+2024-06-18T00:15:18.5459224Z dotnet-install: .NET Core SDK with version '7.0.410' is already installed.
+2024-06-18T00:15:18.5617782Z ##[group]Run dotnet restore
+2024-06-18T00:15:18.5618291Z [36;1mdotnet restore[0m
+2024-06-18T00:15:18.5618906Z [36;1mdotnet build --configuration Release --no-restore[0m
+2024-06-18T00:15:18.5704647Z shell: /usr/bin/bash -e {0}
+2024-06-18T00:15:18.5705194Z env:
+2024-06-18T00:15:18.5705517Z   DOTNET_ROOT: /usr/share/dotnet
+2024-06-18T00:15:18.5706202Z ##[endgroup]
+2024-06-18T00:15:20.0865282Z   Determining projects to restore...
+2024-06-18T00:15:20.5320725Z   Restored /home/runner/work/GH4WModernDevelopment/GH4WModernDevelopment/github4women/github4women.csproj (in 71 ms).
+2024-06-18T00:15:25.4144911Z   github4women -> /home/runner/work/GH4WModernDevelopment/GH4WModernDevelopment/github4women/bin/Release/net8.0/github4women.dll
+2024-06-18T00:15:25.4815031Z 
+2024-06-18T00:15:25.4824438Z Build succeeded.
+2024-06-18T00:15:25.4826588Z     0 Warning(s)
+2024-06-18T00:15:25.4827068Z     0 Error(s)
+2024-06-18T00:15:25.4840537Z 
+2024-06-18T00:15:25.4841224Z Time Elapsed 00:00:04.70
+2024-06-18T00:15:25.5234091Z ##[group]Run dotnet test --no-build --verbosity normal
+2024-06-18T00:15:25.5234950Z [36;1mdotnet test --no-build --verbosity normal[0m
+2024-06-18T00:15:25.5294750Z shell: /usr/bin/bash -e {0}
+2024-06-18T00:15:25.5295190Z env:
+2024-06-18T00:15:25.5295514Z   DOTNET_ROOT: /usr/share/dotnet
+2024-06-18T00:15:25.5295958Z ##[endgroup]
+2024-06-18T00:15:25.7751803Z Build started 06/18/2024 00:15:25.
+2024-06-18T00:15:26.1539382Z 
+2024-06-18T00:15:26.1540022Z Build succeeded.
+2024-06-18T00:15:26.1540643Z     0 Warning(s)
+2024-06-18T00:15:26.1541185Z     0 Error(s)
+2024-06-18T00:15:26.1546020Z 
+2024-06-18T00:15:26.1546417Z Time Elapsed 00:00:00.38
+2024-06-18T00:15:26.1944017Z Post job cleanup.
+2024-06-18T00:15:26.3643709Z Post job cleanup.
+2024-06-18T00:15:26.4593607Z [command]/usr/bin/git version
+2024-06-18T00:15:26.4634882Z git version 2.45.2
+2024-06-18T00:15:26.4677079Z Temporarily overriding HOME='/home/runner/work/_temp/c80be5d4-846a-495d-99da-5e7073c80ccd' before making global git config changes
+2024-06-18T00:15:26.4678525Z Adding repository directory to the temporary git global config as a safe directory
+2024-06-18T00:15:26.4690950Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/GH4WModernDevelopment/GH4WModernDevelopment
+2024-06-18T00:15:26.4726676Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2024-06-18T00:15:26.4760592Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2024-06-18T00:15:26.5009944Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2024-06-18T00:15:26.5032605Z http.https://github.com/.extraheader
+2024-06-18T00:15:26.5044762Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2024-06-18T00:15:26.5078851Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2024-06-18T00:15:26.5518730Z Cleaning up orphan processes
+2024-06-18T00:15:26.5904541Z Terminate orphan process: pid (1932) (dotnet)
